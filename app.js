@@ -12,9 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function toggleClasses(element, ...classNames) {
     classNames.forEach(name => element.classList.toggle(name));
-    // for (let i = 1; i < arguments.length; i++) {
-    //   element.classList.toggle(arguments[i]);
-    // }
   }
 
   function startGame() {
@@ -29,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // set a secret password and the guess count display
     password = getRandomValues(randomWords, 1)[0];
+    console.log(password);
     setGuessCount(guessCount);
     // add update listener for clicking on a word
     wordList.addEventListener('click', updateGame);
@@ -76,7 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (word1.length !== word2.length) throw "Words must have the same length";
     var count = 0;
     for (let i = 0; i < word1.length; i++) {
-      if (word1[i] === word2[i]) count++;
+      for (let j = 0; j < word2.length; j++){
+        if (word1[i] === word2[j]) count++;
+      }
     }
     return count;
   }
