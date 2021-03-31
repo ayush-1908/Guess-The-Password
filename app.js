@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // set a secret password and the guess count display
     password = getRandomValues(randomWords, 1)[0];
-    console.log(password);
     setGuessCount(guessCount);
     // add update listener for clicking on a word
     wordList.addEventListener('click', updateGame);
